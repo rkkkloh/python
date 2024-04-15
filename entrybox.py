@@ -24,6 +24,7 @@ entry = tk.Entry(window,
                  font=('Arial',40,'bold'),
                  fg='lightgreen',
                  bg='black')
+#entry.insert(0,"Spongebob") # set default input string 
 entry.pack(side=tk.LEFT)
 
 password = tk.Entry(window,
@@ -31,6 +32,7 @@ password = tk.Entry(window,
                  fg='lightgreen',
                  bg='black',
                  show='*')
+#password.config(state=DiSABLED)
 password.pack(side=tk.LEFT)
 
 submit_button = Button(window,

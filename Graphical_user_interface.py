@@ -10,7 +10,7 @@ window = tk.Tk() #instatiate an instance of window
 
 window.geometry("500x500")
 window.title("First GUI Program")
-icon = ImageTk.PhotoImage(Image.open('supermario.png'))
+icon = ImageTk.PhotoImage(Image.open('photo/supermario.png'))
 window.iconphoto(True,icon)
 window.config(background="black")
 

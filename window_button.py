@@ -6,7 +6,7 @@ def count():
     print("You clicked the button!")
 
 window = tk.Tk()
-photo = ImageTk.PhotoImage(Image.open('supermario.png'))
+photo = ImageTk.PhotoImage(Image.open('photo/supermario.png'))
 button = tk.Button(window,
                    text="Click Me!",
                    command=count,

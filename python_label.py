@@ -3,10 +3,11 @@
 #from tkinter import *
 import tkinter as tk
 from PIL import Image, ImageTk
+from rembg import remove
 
 window = tk.Tk()
 window.title("Python Label")
-photo = ImageTk.PhotoImage(Image.open('supermario.png'))
+photo = ImageTk.PhotoImage(remove(Image.open('photo/supermario.png')))
 #window.geometry("300x300")
 label = tk.Label(window,
               text = "Hello World",

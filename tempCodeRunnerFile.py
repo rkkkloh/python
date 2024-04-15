@@ -1,1 +1,1 @@
-'bold'
+window.config(background="black")

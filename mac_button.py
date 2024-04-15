@@ -11,7 +11,7 @@ def click():
     #print("You clicked the button!")
 
 window = tk.Tk()
-photo = ImageTk.PhotoImage(Image.open('supermario.png'))
+photo = ImageTk.PhotoImage(Image.open('photo/supermario.png'))
 button = Button(window,
                 text='click me! ',
                 command=click,
