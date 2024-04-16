@@ -3,7 +3,7 @@ import random
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 5000
+SPEED = 50
 SPACE_SIZE = 50
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
@@ -55,17 +55,46 @@ def nextTurn(snake,food):
 
     snake.squares.insert(0,square)
 
-    del snake.coordinates[-1]
+    if x == food.coordinates[0] and y == food.coordinates[1]:
 
-    canvas.delete(snake.squares[-1])
+        global score
 
-    del snake.squares[-1]
-    print(snake.coordinates)
+        score += 1
+
+        label.config(text=f"Score:{score}")
+
+        canvas.delete("food")
+
+        food = Food()
+
+    else:
+
+        del snake.coordinates[-1]
+
+        canvas.delete(snake.squares[-1])
+
+        del snake.squares[-1]
+
     window.after(SPEED, nextTurn, snake, food)
 
 
-def channgeDirection(newDirection):
-    pass
+def changeDirection(newDirection):
+    
+    global direction
+
+    if newDirection == 'up':
+        if direction != 'down':
+            direction = newDirection
+    elif newDirection == 'down':
+        if direction != 'up':
+            direction = newDirection
+    elif newDirection == 'left':
+        if direction != 'right':
+            direction = newDirection
+    elif newDirection == 'right':
+        if direction != 'left':
+            direction = newDirection
+
 
 def checkCollisions(snake):
     pass
@@ -98,10 +127,10 @@ y = int(screenHeight/2 - windowHeight/2)
 
 window.geometry("{}x{}+{}+{}".format(windowWidth,windowHeight,x,y))
 
-window.bind('<Left>', lambda event: change_direction('left'))
-window.bind('<Right>', lambda event: change_direction('right'))
-window.bind('<Up>', lambda event: change_direction('up'))
-window.bind('<Down>', lambda event: change_direction('down'))
+window.bind('<Left>', lambda event: changeDirection('left'))
+window.bind('<Right>', lambda event: changeDirection('right'))
+window.bind('<Up>', lambda event: changeDirection('up'))
+window.bind('<Down>', lambda event: changeDirection('down'))
 
 snake = Snake()
 food = Food()
