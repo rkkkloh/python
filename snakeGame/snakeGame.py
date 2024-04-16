@@ -3,7 +3,7 @@ import random
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 50
+SPEED = 300
 SPACE_SIZE = 50
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
@@ -75,7 +75,11 @@ def nextTurn(snake,food):
 
         del snake.squares[-1]
 
-    window.after(SPEED, nextTurn, snake, food)
+    if checkCollisions(snake):
+        gameOver()
+
+    else:
+        window.after(SPEED, nextTurn, snake, food)
 
 
 def changeDirection(newDirection):
@@ -97,10 +101,26 @@ def changeDirection(newDirection):
 
 
 def checkCollisions(snake):
-    pass
+    
+    x, y = snake.coordinates[0]
+
+    if x < 0 or x >= GAME_WIDTH:
+        print("Game Over")
+        return True
+    if y < 0 or x >= GAME_HEIGHT:
+        print("Game Over")
+        return True
+    
+    for bodyPart in snake.coordinates[1:]:
+        if x == bodyPart[0] and y ==bodyPart[1]:
+            return True
+
+    return False 
 
 def gameOver():
-    pass
+
+    canvas.delete(tk.ALL)
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=('consolas',70), text="GAME OVER", fill="red", tag="gameover")
 
 window= tk.Tk()
 window.title("SnakeGame")
