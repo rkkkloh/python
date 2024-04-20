@@ -4,7 +4,7 @@ import random
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
 SPEED = 300
-SPACE_SIZE = 50
+SPACE_SIZE = 25
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
 FOOD_COLOR = "#FF0000"
@@ -107,7 +107,7 @@ def checkCollisions(snake):
     if x < 0 or x >= GAME_WIDTH:
         print("Game Over")
         return True
-    if y < 0 or x >= GAME_HEIGHT:
+    if y < 0 or y >= GAME_HEIGHT:
         print("Game Over")
         return True
     
