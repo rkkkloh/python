@@ -1,0 +1,3 @@
+([('textEditorProgram',
+   '/Users/ruikangloh/Desktop/python/textEditorProgram/dist/textEditorProgram',
+   'EXECUTABLE')],)
