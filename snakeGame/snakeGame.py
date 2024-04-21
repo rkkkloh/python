@@ -3,7 +3,7 @@ import random
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 300
+SPEED = 500
 SPACE_SIZE = 25
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
@@ -59,11 +59,15 @@ def nextTurn(snake,food):
 
         global score
 
+        global SPEED
+
         score += 1
 
         label.config(text=f"Score:{score}")
 
         canvas.delete("food")
+
+        SPEED *= 0.99
 
         food = Food()
 
@@ -79,7 +83,7 @@ def nextTurn(snake,food):
         gameOver()
 
     else:
-        window.after(SPEED, nextTurn, snake, food)
+        window.after(int(SPEED), nextTurn, snake, food)
 
 
 def changeDirection(newDirection):

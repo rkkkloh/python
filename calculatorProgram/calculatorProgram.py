@@ -45,9 +45,9 @@ tk.Label(window, textvariable=equation, font=('consolas',20), bg="white", width=
 frame = tk.Frame(window)
 frame.pack()
 
-createButton(frame,1,5,4,35,lambda:buttonPress('1'),0,0,1)
-createButton(frame,2,5,4,35,lambda:buttonPress('2'),0,1,1)
-createButton(frame,3,5,4,35,lambda:buttonPress('3'),0,2,1)
+createButton(frame,1,5,4,35,lambda:buttonPress(1),0,0,1)
+createButton(frame,2,5,4,35,lambda:buttonPress(2),0,1,1)
+createButton(frame,3,5,4,35,lambda:buttonPress(3),0,2,1)
 createButton(frame,4,5,4,35,lambda:buttonPress(4),1,0,1)
 createButton(frame,5,5,4,35,lambda:buttonPress(5),1,1,1)
 createButton(frame,6,5,4,35,lambda:buttonPress(6),1,2,1)

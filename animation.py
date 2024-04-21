@@ -29,7 +29,7 @@ while True:
     if(coordinates[1]>=(HEIGHT-image_height) or coordinates[1]<0):
         yVelocity = -yVelocity
     canvas.move(my_image,xVelocity,yVelocity)
-    #window.update()
+    window.update()
     time.sleep(0.01)
 
 window.mainloop()

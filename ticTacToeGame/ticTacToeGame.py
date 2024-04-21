@@ -98,8 +98,7 @@ def new_game():
 
     for row in range(3):
         for column in range(3):
-            buttons[row][column].config(text="",fg="black")
-            buttons[row][column].config(text="",bg="white")
+            buttons[row][column].config(text="",fg="black",bg="white")
 
 
 window = Tk()
